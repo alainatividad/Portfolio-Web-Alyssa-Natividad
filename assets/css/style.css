@@ -37,27 +37,29 @@ nav {
 }
 
 nav a {
-  padding: 10px 5px;
+  padding: 20px 8px;
   color: #d7bcc8;
+  font-size: 2rem;
   text-align: center;
 }
 
-main {
+main,
+footer {
+  padding: 0 10px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
 }
 
-/* Make any section other than the projects be 200px in height */
-main > section {
+footer {
+  padding-bottom: 10px;
+}
+
+main > section,
+footer > section {
   display: flex;
-  flex: 0 0 300px;
   margin-bottom: 2px;
   justify-content: space-between;
-}
-/* Make the projects section 500px in height */
-main > .projects {
-  flex: 0 0 500px;
-  flex-direction: column;
 }
 
 .section-head {
@@ -97,6 +99,7 @@ main > .projects {
 }
 
 .projects {
+  flex-direction: column;
   background-color: #82b29b;
 }
 
@@ -108,6 +111,56 @@ main > .projects {
   display: flex;
   flex-wrap: wrap;
 }
+
+.work {
+  position: relative;
+  flex: 1 0 33.33%;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.work:first-child {
+  flex: 2 0 100%;
+  width: 100%;
+}
+
+.work p {
+  font-size: 1rem;
+}
+
+/* Change opacity of the image and show the text behind it*/
+/* From https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity */
+.work img {
+  padding: 10px;
+  width: 50%;
+  min-width: 400px;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  border: 2px solid #efd780;
+}
+
+.work:hover img {
+  opacity: 30%;
+  transition: 0.5s ease;
+}
+
+.work div {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fac8cd;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.work:hover div {
+  opacity: 100%;
+  transition: 0.5s ease;
+}
+
 .contacts .section-body {
   flex-direction: column;
   align-items: flex-start;
@@ -124,6 +177,9 @@ main > .projects {
   }
   main > section {
     flex: auto;
+  }
+  .work {
+    flex: 1 1 100%;
   }
   .section-body {
     padding: 15px;
