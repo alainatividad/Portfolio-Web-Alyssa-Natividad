@@ -1,5 +1,5 @@
 * {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #272d2d;
 }
@@ -20,12 +20,13 @@ h3 {
 
 h4 {
   font-size: 1.5rem;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
 }
 
 p {
   font-size: 1.75rem;
-  padding: 5px;
+  padding: 10px;
+  line-height: 2rem;
 }
 
 nav {
@@ -67,7 +68,7 @@ footer > section {
   flex-direction: column;
   justify-content: center;
   flex: 0 0 50%;
-  padding: 10px;
+  padding: 50px;
   text-align: center;
 }
 
@@ -79,7 +80,7 @@ footer > section {
 }
 
 .hello-world {
-  background-color: #d7bcc8; 
+  background-color: #d7bcc8;
 }
 
 .hello-world h2 {
@@ -103,27 +104,27 @@ footer > section {
   background-color: #82b29b;
 }
 
-.project-head {
+.project-head h2 {
+  display: block;
   text-align: center;
+  border: 5px double #272d2d;
 }
 
 .project-body {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .work {
   position: relative;
-  flex: 1 0 33.33%;
+  flex: 1 0 0;
   padding: 10px;
   text-align: center;
-  width: 100%;
 }
 
 .work:first-child {
-  flex: 2 0 100%;
-  width: 100%;
-  max-width: 900px;
+  flex: 1 0 100%;
 }
 
 .work p {
@@ -168,6 +169,10 @@ footer > section {
 
 .contacts {
   background-color: #b58398;
+}
+
+.logos a {
+  padding: 10px;
 }
 
 @media screen and (max-width: 768px) {
