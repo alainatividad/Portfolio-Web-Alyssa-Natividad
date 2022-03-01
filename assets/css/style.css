@@ -79,7 +79,7 @@ footer > section {
 }
 
 .hello-world {
-  background-color: #d7bcc8; /*#82b29b;*/
+  background-color: #d7bcc8; 
 }
 
 .hello-world h2 {
@@ -123,6 +123,7 @@ footer > section {
 .work:first-child {
   flex: 2 0 100%;
   width: 100%;
+  max-width: 900px;
 }
 
 .work p {
@@ -152,7 +153,6 @@ footer > section {
   left: 50%;
   background-color: #fac8cd;
   transform: translate(-50%, -50%);
-  /* -ms-transform: translate(-50%, -50%); */
   text-align: center;
 }
 
