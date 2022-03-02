@@ -1,3 +1,9 @@
+:root {
+  --border-color: #efd780;
+  --padding: 15px;
+}
+
+/* Set base font size to 14px and base the header sizes to that size */
 * {
   font-size: 14px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -42,18 +48,18 @@ nav a {
   color: #d7bcc8;
   font-size: 2rem;
   text-align: center;
+  text-decoration: none;
+}
+a:hover {
+  color: #efd780;
+  text-decoration: none;
 }
 
 main,
 footer {
-  padding: 0 10px;
-  padding-top: 10px;
   display: flex;
+  padding: 5px 10px;
   flex-direction: column;
-}
-
-footer {
-  padding-bottom: 10px;
 }
 
 main > section,
@@ -63,6 +69,11 @@ footer > section {
   justify-content: space-between;
 }
 
+.hello-world {
+  background-color: #d7bcc8;
+}
+
+/* Put section-head and section-body of each section side by side */
 .section-head {
   display: flex;
   flex-direction: column;
@@ -79,26 +90,14 @@ footer > section {
   flex: 0 0 50%;
 }
 
-.hello-world {
-  background-color: #d7bcc8;
-}
-
-.hello-world h2 {
-  padding-top: 15px;
-}
-
-.hello-world h3 {
-  padding: 15px;
-}
-
 .self-image {
   width: 75%;
-  border: 25px solid white;
+  border: 25px solid var(--border-color);
   border-radius: 25%;
   min-height: 300px;
   min-width: 300px;
 }
-
+/* The section in projects are in a column */
 .projects {
   flex-direction: column;
   background-color: #82b29b;
@@ -110,6 +109,7 @@ footer > section {
   border: 5px double #272d2d;
 }
 
+/* Also make the project-body a flexbox */
 .project-body {
   display: flex;
   flex-wrap: wrap;
@@ -122,13 +122,9 @@ footer > section {
   padding: 10px;
   text-align: center;
 }
-
+/* Make the image of the first project larger than the rest */
 .work:first-child {
   flex: 1 0 100%;
-}
-
-.work p {
-  font-size: 1rem;
 }
 
 /* Change opacity of the image and show the text behind it*/
@@ -162,38 +158,85 @@ footer > section {
   transition: 0.5s ease;
 }
 
+.contacts {
+  background-color: #b58398;
+}
+
 .contacts .section-body {
   flex-direction: column;
   align-items: flex-start;
 }
 
-.contacts {
-  background-color: #b58398;
-}
-
+/* Add spacing between the two logos */
 .logos a {
   padding: 10px;
 }
 
 @media screen and (max-width: 768px) {
+  /* Make the sections show in column */
   nav,
   main section {
     flex-direction: column;
   }
-  main > section {
-    flex: auto;
-  }
+  /* When the screen gets smaller, just align the work images into one column */
   .work {
     flex: 1 1 100%;
   }
+  /* Decrease the space between the section-head and section-body */
+  .section-head {
+    padding: 25px;
+  }
   .section-body {
-    padding: 15px;
+    padding: var(--padding);
     align-items: center;
   }
+
   .self-image {
     width: 50%;
   }
+
   h2 {
-    padding: 15px 0;
+    padding: var(--padding) 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  /* Decrease the main font size */
+  * {
+    font-size: 8px;
+  }
+
+  nav a {
+    padding: 10px 8px;
+  }
+
+  .self-image {
+    min-height: 100px;
+    min-width: 100px;
+    width: 75%;
+  }
+
+  .work img {
+    min-width: 100px;
+    width: 100%;
+  }
+
+  /* Decrease the distance between the two sections */
+  .section-head {
+    padding: 10px;
+  }
+
+  .section-body {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  /* Make the contacts sections display in a column */
+  .contacts {
+    flex-direction: column;
+  }
+  .contacts .section-body {
+    align-items: center;
   }
 }

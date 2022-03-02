@@ -5,6 +5,7 @@
   background-color: rgb(218, 142, 124);
 }
 
+/* Make the navigation persistent */
 nav {
   display: flex;
   justify-content: space-evenly;
@@ -14,7 +15,6 @@ nav {
   width: 100%;
   background-color: bisque;
   overflow: hidden;
-  /* z-index: 3; */
 }
 
 nav a {
@@ -28,17 +28,26 @@ nav a {
 a {
   text-decoration: none;
 }
+a:hover {
+  color: ;
+}
 h1 {
   font-size: 4rem;
 }
 h2 {
   font-size: 3rem;
 }
+h3 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.5rem;
+}
 
 h1,
 h2,
 p {
-  padding: 15px;
+  padding: 10px;
 }
 
 h3,
@@ -49,15 +58,15 @@ h4 {
 main {
   margin-top: 100px;
   display: flex;
-  flex-flow: column wrap;cd 02  
+  flex-flow: column wrap;
 }
 
 main > section,
 footer > section {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  /* margin: 15px; */
 }
 
 .hello-world .section-head {
@@ -72,25 +81,14 @@ main .section-body {
   padding: 10px;
 }
 
-.hello-world,
-.contacts {
-  align-items: center;
-  justify-content: center;
-}
-
 .self-image {
   max-width: 75%;
   border: 10px dotted black;
   border-radius: 50%;
 }
 
-.contacts {
-  align-items: center;
-}
-
 .projects {
   flex-direction: column;
-  align-items: center;
 }
 
 .project-body {
@@ -114,7 +112,6 @@ main .section-body {
 
 .work img {
   padding: 10px;
-  /* border: 2px solid black; */
   border-radius: 20px;
   max-width: 75%;
 }
@@ -148,13 +145,9 @@ main .section-body {
   nav a {
     padding: 8px;
   }
-
+  /* Remove the persistence of the navigation bar */
   nav {
     position: unset;
-    width: 100%;
-    background-color: bisque;
-    overflow: hidden;
-    z-index: 3;
   }
 
   main {
@@ -168,5 +161,22 @@ main .section-body {
   .project-body {
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 10px;
+  }
+
+  /* Make the contacts sections display in a column */
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main > section,
+  footer > section {
+    padding: 5px;
   }
 }
